@@ -1,0 +1,6 @@
+{"_id":{"$oid":"5c77c778684959deb67661ce"},"type":"手机","time":{"$numberLong":"4654646456"},"hot":100}
+{"_id":{"$oid":"5c77c778684959deb67661d0"},"type":"电脑","time":{"$numberLong":"564646423441"},"hot":91}
+{"_id":{"$oid":"5c77c778684959deb67661d2"},"type":"平板","time":{"$numberLong":"564646423112"},"hot":88}
+{"_id":{"$oid":"5c77c778684959deb67661d4"},"type":"配件","time":{"$numberLong":"564646423177"},"hot":95}
+{"_id":{"$oid":"5c78c947684959deb67673a1"},"type":"办公","time":{"$numberLong":"564646423199"},"hot":60}
+{"_id":{"$oid":"5c78c947684959deb67673a3"},"type":"其他","time":{"$numberLong":"5646464231778"},"hot":37}

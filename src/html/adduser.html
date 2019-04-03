@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<!-- 添加用户 -->
+
+<head>
+    <meta charset="utf-8">
+    <title>添加用户</title>
+    <link rel="icon" href="../images/icon.jpg">
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../lib/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/search.css">
+    <script src="../lib/layui/layui.js"></script>
+    <script src="../lib/jquery-1.10.1.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/user-defined.js"></script>
+    <script src="../js/md5.js"></script>
+
+</head>
+
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header">
+            <div class="layui-logo" style="background: url(../images/hlogo.jpg) no-repeat center"></div>
+            <!-- 头部区域（可配合layui已有的水平导航） -->
+            <ul class="layui-nav layui-layout-left" style="height:60px;">
+                <li class="layui-nav-item" style="height:60px;line-height: 65px;"><a href="index.html">首页</a></li>
+
+
+                <div class="layui-form component" style="margin-top:15px;">
+                    <select name="modules" lay-verify="required" lay-search="">
+                        <option value="">直接选择或搜索选择</option>
+                        <option value="1">layer</option>
+                        <option value="2">form</option>
+                        <option value="3">layim</option>
+                        <option value="4">element</option>
+                        <option value="5">laytpl</option>
+                        <option value="6">upload</option>
+                        <option value="7">laydate</option>
+                        <option value="8">laypage</option>
+                        <option value="9">flow</option>
+                        <option value="10">util</option>
+                    </select>
+                    <div class="layui-unselect layui-form-select">
+                        <div class="layui-select-title"><input type="text" placeholder="直接选择或搜索选择" value=""
+                                class="layui-input layui-unselect"><i></i></div>
+                        <dl class="layui-anim layui-anim-upbit">
+                            <dd lay-value="1" class="">layer</dd>
+                            <dd lay-value="2" class="">form</dd>
+                            <dd lay-value="3" class="">layim</dd>
+                            <dd lay-value="4" class="">element</dd>
+                            <dd lay-value="5" class="">laytpl</dd>
+                            <dd lay-value="6" class="">upload</dd>
+                            <dd lay-value="7" class="">laydate</dd>
+                            <dd lay-value="8" class="">laypage</dd>
+                            <dd lay-value="9" class="">flow</dd>
+                            <dd lay-value="10" class="">util</dd>
+                        </dl>
+                    </div>
+                    <i class="layui-icon"></i>
+                </div>
+
+
+                <!-- 天气 -->
+                <li class="layui-nav-item" style="height:60px;line-height: 55px;">
+                    <div class="
+                    weather" pc>
+                        <div id="tp-weather-widget"></div>
+                        <script src="../js/weather.js"></script>
+                    </div>
+                </li>
+            </ul>
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        <img src="../images/xxx.jpg" class="layui-nav-img">
+                        <span class="welcome"></span>
+                    </a>
+                </li>
+                <li class="layui-nav-item lockcms" pc>
+                    <a href="javascript:;"><i class="iconfont icon-lock1"></i><cite>锁屏</cite></a>
+                </li>
+                <li class="layui-nav-item loginout"><a href="javascript:;">退出</a></li>
+            </ul>
+        </div>
+
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a class="" href="javascript:;">商品管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="goodlist.html">商品列表</a></dd>
+                            <dd><a href="goodtype.html">商品分类</a></dd>
+                            <dd><a href="addgoods.html">添加商品</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:;">用户管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="user.html">用户列表</a></dd>
+                            <dd class="layui-this"><a href="adduser.html" id="addusername">用户添加</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:;">订单管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="orderlist.html">订单列表</a></dd>
+
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="layui-body">
+            <!-- 内容主体区域 -->
+            <div style="padding: 20px;border: 10px solid #ccc;border-right: none">
+                <span class="layui-breadcrumb">
+                    <a href="index.html">首页</a>
+                    <a href="javascript:;">用户管理</a>
+                    <a><cite>用户添加</cite></a>
+                </span>
+                <!-- 添加用户 -->
+                <form class="layui-form layui-form-pane" action="" style="padding: 50px;" target="nm_iframe">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">用户名</label>
+                        <div class="layui-input-inline">
+
+                            <input type="text" class="form-control" id="username" placeholder="请输入用户名"
+                                lay-verify="required">
+                            <div class="invalid-feedback"></div>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">密码</label>
+                        <div class="layui-input-inline">
+
+                            <input type="password" id="password" placeholder="密码必须6到12位" autocomplete="off"
+                                class="form-control" lay-verify="pass">
+                            <div class="invalid-feedback"></div>
+
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">确认密码</label>
+                        <div class="layui-input-inline">
+
+                            <input type="password" id="confirmpassword" placeholder="请再次输入密码" autocomplete="off"
+                                class="form-control" lay-verify="pass">
+                            <div class="invalid-feedback"></div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">邮箱</label>
+                        <div class="layui-input-inline">
+
+                            <input type="email" id="email" placeholder="请输入邮箱地址" autocomplete="off" class="form-control"
+                                lay-verify="required">
+                            <div class="invalid-feedback"></div>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">性别</label>
+                            <div class="layui-input-inline">
+                                <select lay-search="" id="sex">
+                                    <option value="男">男</option>
+                                    <option value="女">女</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">备注</label>
+                        <div class="layui-input-block" id="text">
+                            <textarea placeholder="请输入内容" id="beizhu" class="layui-textarea"
+                                lay-verify="required"></textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <!-- <button class="layui-btn" lay-filter="demo2" id="confirmBtn">添加用户</button> -->
+                        <button class="layui-btn" id="confirmBtn">立即提交</button>
+                    </div>
+                </form>
+                <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
+                <!-- end -->
+            </div>
+        </div>
+        <div class="layui-footer" style="text-align:center">
+            <!-- 底部固定区域 -->
+            © 2019.2.27 Backstage Management System
+        </div>
+    </div>
+    <script>
+        var data = decodeURI(location.search);//获取从列表页传过来的商品id
+        // console.log(data);
+        var now = data.slice(1);//切割
+        if (now) {
+            let xhr = new XMLHttpRequest();
+            xhr.onload = () => {
+                if (xhr.status == 200) {
+                    let res = JSON.parse(xhr.responseText);
+                    // let res = xhr.responseText;
+                    // console.log(res);
+                    // console.log(res[0].username);
+                    $('#username').val(res[0].username);
+                    $('#password').val(res[0].password);
+                    $('#confirmpassword').val(res[0].password);
+                    $('#email').val(res[0].email);
+                    $('#sex').val(res[0].gender);
+                    $('#beizhu').val(res[0].beizhu);
+                }
+            }
+            xhr.open('post', '/adduser', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            let datas = `_id=${now}`;
+            // console.log(datas);
+            xhr.send(datas);
+        }
+
+        layui.use(['form', 'layedit', 'element'], function () {
+            var element = layui.element;
+
+            var form = layui.form
+                , layer = layui.layer
+                , layedit = layui.layedit;
+            //创建一个编辑器
+            var editIndex = layedit.build('LAY_demo_editor');
+            //自定义验证规则
+            form.verify({
+                title: function (value) {
+                    if (value.length < 5) {
+                        return '标题至少得5个字符啊';
+                    }
+                }
+                , pass: [
+                    /^[\S]{6,12}$/
+                    , '密码必须6到12位，且不能出现空格'
+                ]
+                , content: function (value) {
+                    layedit.sync(editIndex);
+                }
+            });
+
+            //监听提交
+            form.on('submit(demo1)', function (data) {
+                layer.alert(JSON.stringify(data.field), {
+                    title: '最终的提交信息'
+                })
+                return false;
+            });
+
+            (() => {
+                //判断用户名是否存在
+                let usernameok = false;
+                let username = document.querySelector("#username");
+                username.onchange = () => {
+                    let _username = username.value;
+                    // 发起ajax请求
+                    let xhr = new XMLHttpRequest();
+                    if (_username.trim()) {
+                        xhr.onload = () => {
+                            if (xhr.status == 200) {
+                                if (xhr.responseText == 'no') {
+                                    username.classList.remove('is-valid')
+                                    username.classList.add('is-invalid')
+                                    username.nextElementSibling.innerText = '你输入的用户太受欢迎'
+                                    usernameok = false;
+                                } else {
+                                    username.classList.remove('is-invalid')
+                                    username.classList.add('is-valid')
+                                    username.nextElementSibling.innerText = '可以添加'
+                                    usernameok = true;
+                                }
+                            }
+                        }
+                    }
+                    else {
+                        username.classList.remove('is-valid')
+                        username.classList.add('is-invalid')
+                        username.nextElementSibling.innerText = '不能为空'
+                        usernameok = false;
+                    }
+                    xhr.open('get', `/register?username=${_username}`, true);
+                    xhr.send();
+                }
+                //密码
+                let passwordok = false;
+                let password = document.querySelector("#password");
+                password.onchange = () => {
+                    let _password = password.value;
+                    if (_password.trim() && _password.length >= 6) {
+                        password.classList.remove('is-invalid')
+                        password.classList.add('is-valid')
+                        password.nextElementSibling.innerText = '符合'
+                        passwordok = true;
+                    } else {
+                        password.classList.remove('is-valid')
+                        password.classList.add('is-invalid')
+                        password.nextElementSibling.innerText = '密码不符合规则'
+                        passwordok = false;
+                    }
+                }
+                //确认密码
+                let confirmpasswordok = false;
+                let confirmpassword = document.querySelector("#confirmpassword");
+                confirmpassword.onchange = () => {
+                    let _confirmpassword = confirmpassword.value;
+                    let _password = password.value;
+                    if (_confirmpassword === _password) {
+                        confirmpassword.classList.remove('is-invalid')
+                        confirmpassword.classList.add('is-valid')
+                        confirmpassword.nextElementSibling.innerText = '符合'
+                        confirmpasswordok = true;
+                    } else {
+                        confirmpassword.classList.remove('is-valid')
+                        confirmpassword.classList.add('is-invalid')
+                        confirmpassword.nextElementSibling.innerText = '密码不一致'
+                        confirmpasswordok = false;
+                    }
+                }
+                //邮箱
+                let emailok = false;
+                let email = document.querySelector("#email");
+                email.onchange = () => {
+                    let _email = email.value;
+                    if (checkReg.email(_email)) {
+                        email.classList.remove('is-invalid')
+                        email.classList.add('is-valid')
+                        email.nextElementSibling.innerText = '符合'
+                        emailok = true;
+                    } else {
+                        email.classList.remove('is-valid')
+                        email.classList.add('is-invalid')
+                        email.nextElementSibling.innerText = '邮箱不符合规则'
+                        emailok = false;
+                    }
+                }
+                let sexval = document.getElementById("sex");
+                let confirmBtn = document.getElementById("confirmBtn");
+                let _gender = sexval.value;
+                //点击 
+                //判断是修改还是新注册，now是证明有id是修改
+                if (now) {
+                    usernameok = true;
+                    passwordok = true;
+                    emailok = true;
+                    confirmBtn.onclick = function () {
+                        if (usernameok && passwordok && emailok) {
+                            let _gender = sexval.value;
+                            let _beizhu = document.getElementById("beizhu").value;
+                            let _username = username.value;
+                            let _password = password.value;
+                            var md5password = $.md5(_password);
+                            let _email = email.value;
+                            // 发起ajax请求
+                            let xhr = new XMLHttpRequest();
+                            xhr.onload = () => {
+                                if (xhr.status == 200) {
+                                    let res = JSON.parse(xhr.responseText);
+                                    if (res.ok) {
+                                        layer.msg("修改成功！");
+                                        setTimeout("window.location.href = './user.html'", 3000);
+                                    }
+                                }
+                            }
+                            xhr.open('post', '/adduser2', true);
+                            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+                            let data = `_id=${now}&username=${_username}&password=${md5password}&email=${_email}&gender=${_gender}&beizhu=${_beizhu}`
+                            xhr.send(data)
+                        } else {
+                            layer.msg("修改失败！");
+                        }
+                    }
+                }
+                else {
+                    confirmBtn.onclick = function () {
+                        if (usernameok && passwordok && emailok) {
+                            let _gender = sexval.value;
+                            let _beizhu = document.getElementById("beizhu").value;
+                            let _username = username.value;
+                            let _password = password.value;
+                            let _email = email.value;
+                            var md5password = $.md5(_password);
+
+                            // 发起ajax请求
+                            let xhr = new XMLHttpRequest();
+                            xhr.onload = () => {
+                                if (xhr.status == 200) {
+                                    let res = JSON.parse(xhr.responseText);
+                                    if (res.ok) {
+                                        layer.msg("添加成功！");
+                                        setTimeout("window.location.href = './user.html'", 3000);
+                                    }
+                                }
+                            }
+                            xhr.open('post', '/register', true);
+                            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                            let data = `username=${_username}&password=${md5password}&email=${_email}&gender=${_gender}&beizhu=${_beizhu}`
+                            xhr.send(data);
+
+                        } else {
+                            layer.msg("添加失败！");
+                        }
+                    }
+                }
+
+            })();
+        });
+    </script>
+
+    <style>
+        html {
+            user-select: none;
+        }
+
+        a {
+            text-decoration: none !important;
+        }
+    </style>
+    <script src="../js/token.js"></script>
+</body>
+
+</html>

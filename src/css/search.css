@@ -1,0 +1,27 @@
+.component {
+    user-select: none;
+    float: left;
+    width: 200px;
+    height: 30px;
+    margin-top: 20px;
+    position: relative;
+    color: #000;
+}
+
+.component .layui-icon {
+    position: absolute;
+    right: 8px;
+    top: 10px;
+    color: #000;
+}
+
+.component .layui-input {
+    height: 30px;
+    border: none;
+    transition: all 0.3s;
+}
+
+.component .layui-form-select .layui-edge,
+.top_menu .layui-nav-item[mobile] {
+    display: none;
+}

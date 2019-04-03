@@ -1,0 +1,16 @@
+{"_id":{"$oid":"5c78d7dd208da921901a9cee"},"goodname":"魅族X","newprice":"1777","oldprice":"1999","kucun":"1","type":"手机","zhuangtai":"下架","shijian":{"$date":"2019-03-02T08:57:07.008Z"}}
+{"_id":{"$oid":"5c78d8e03ca12558407ca3c2"},"goodname":"iphone7","newprice":"177","oldprice":"199","kucun":"20","type":"手机","zhuangtai":"上线","shijian":{"$date":"2019-03-02T07:04:42.208Z"}}
+{"_id":{"$oid":"5c78da9d3ca12558407ca3c4"},"goodname":"小米9","newprice":"1777","oldprice":"1999","kucun":"10","type":"办公","zhuangtai":"上线","shijian":{"$date":"2019-03-01T11:25:20.094Z"}}
+{"_id":{"$oid":"5c78db3b3ca12558407ca3c5"},"goodname":"小米7","newprice":"1777","oldprice":"1988","kucun":"2","type":"电脑","zhuangtai":"上线","shijian":{"$date":"2019-03-01T11:24:45.295Z"}}
+{"_id":{"$oid":"5c78e6e160d00f6184000b78"},"goodname":"魅族1","newprice":"1333","oldprice":"1997","kucun":"1","type":"配件","zhuangtai":"上线","shijian":{"$date":"2019-03-01T11:25:01.307Z"}}
+{"_id":{"$oid":"5c78e9f1af1d1a4558a23753"},"goodname":"魅族12","newprice":"1333","oldprice":"1999","kucun":"1","type":"电脑","zhuangtai":"上线","shijian":{"$date":"2019-03-01T11:25:38.076Z"}}
+{"_id":{"$oid":"5c78ea05af1d1a4558a23754"},"goodname":"魅族X1","newprice":"1777","oldprice":"1999","kucun":"1","type":"平板","zhuangtai":"下架","shijian":{"$date":"2019-03-01T11:25:52.204Z"}}
+{"_id":{"$oid":"5c78ea1eaf1d1a4558a23755"},"goodname":"小米4","newprice":"1888","oldprice":"1999","kucun":"10","type":"手机","zhuangtai":"上线","shijian":{"$date":"2019-03-02T07:08:38.224Z"}}
+{"_id":{"$oid":"5c78f1fded560528ac852a70"},"goodname":"小米9","newprice":"1555","oldprice":"1777","kucun":"3","type":"手机","zhuangtai":"上线","shijian":{"$date":"2019-03-02T07:24:33.695Z"}}
+{"_id":{"$oid":"5c7916f197c2cd3ec09826e8"},"goodname":"iphoneXR","newprice":"9999","oldprice":"10999","kucun":"1","type":"手机","zhuangtai":"上线","shijian":{"$date":"2019-03-01T11:26:40.718Z"}}
+{"_id":{"$oid":"5c79dd061a67165504f09c8d"},"goodname":"小米5","newprice":"1555","oldprice":"1777","kucun":"600","type":"手机","zhuangtai":"上线","shijian":{"$date":"2019-03-02T01:31:49.436Z"}}
+{"_id":{"$oid":"5c7a44d0f484f2625469fafb"},"goodname":"红米7","newprice":"1888","oldprice":"1999","kucun":"70","type":"平板","zhuangtai":"上线","shijian":{"$date":"2019-03-02T08:54:39.299Z"}}
+{"_id":{"$oid":"5c7def524b25091d5c8a1e1f"},"goodname":"54","newprice":"45","oldprice":"45","kucun":"45","type":"手机","zhuangtai":"上线","shijian":{"$date":"2019-03-05T03:38:57.466Z"}}
+{"_id":{"$oid":"5c7df0774b25091d5c8a1e20"},"goodname":"啊水水","newprice":"1","oldprice":"1","kucun":"1","type":"手机","zhuangtai":"上线","shijian":{"$date":"2019-03-05T03:43:50.183Z"}}
+{"_id":{"$oid":"5c7e397bfe76d150d4d422d5"},"goodname":"xixi","newprice":"1717","oldprice":"7171","kucun":"20","type":"手机","zhuangtai":"上线","shijian":{"$date":"2019-03-05T08:55:22.320Z"}}
+{"_id":{"$oid":"5c7e4a78876c98597cbf6677"},"goodname":"xzx","newprice":"123","oldprice":"123","kucun":"123","type":"手机","zhuangtai":"上线","shijian":{"$date":"2019-03-05T10:07:51.097Z"}}

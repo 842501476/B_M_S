@@ -1,0 +1,3 @@
+{"_id":{"$oid":"5c779ee9684959deb6765a2e"},"goodname":"小米1","price":"998","goodnum":"1","yunfei":"20","goodprice":"998","totle":"1108","time":"46456464"}
+{"_id":{"$oid":"5c77cf58684959deb67664ad"},"goodname":"小米9","price":"3000","goodnum":"1","yunfei":"0","goodprice":"3000","totle":"3000","time":"46456464"}
+{"_id":{"$oid":"5c77cf58684959deb67664af"},"goodname":"小米7","price":"908","goodnum":"1","yunfei":"0","goodprice":"908","totle":"908","time":"46456464"}

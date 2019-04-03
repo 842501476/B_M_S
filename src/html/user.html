@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>用户列表</title>
+    <link rel="icon" href="../images/icon.jpg">
+    <link rel="stylesheet" href="../lib/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/search.css">
+    <script src="../lib/layui/layui.js"></script>
+    <script src="../js/user-defined.js"></script>
+</head>
+
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header">
+            <div class="layui-logo" style="background: url(../images/hlogo.jpg) no-repeat center"></div>
+            <!-- 头部区域（可配合layui已有的水平导航） -->
+            <ul class="layui-nav layui-layout-left" style="height:60px;">
+                <li class="layui-nav-item" style="padding-bottom: 20px;height:60px;line-height: 65px;"><a href="index.html">首页</a></li>
+
+
+                <div class="layui-form component" style="margin-top:15px;">
+                    <select name="modules" lay-verify="required" lay-search="">
+                        <option value="">直接选择或搜索选择</option>
+                        <option value="1">layer</option>
+                        <option value="2">form</option>
+                        <option value="3">layim</option>
+                        <option value="4">element</option>
+                        <option value="5">laytpl</option>
+                        <option value="6">upload</option>
+                        <option value="7">laydate</option>
+                        <option value="8">laypage</option>
+                        <option value="9">flow</option>
+                        <option value="10">util</option>
+                    </select>
+                    <div class="layui-unselect layui-form-select">
+                        <div class="layui-select-title"><input type="text" placeholder="直接选择或搜索选择" value="" class="layui-input layui-unselect"><i></i></div>
+                        <dl class="layui-anim layui-anim-upbit">
+                            <dd lay-value="1" class="">layer</dd>
+                            <dd lay-value="2" class="">form</dd>
+                            <dd lay-value="3" class="">layim</dd>
+                            <dd lay-value="4" class="">element</dd>
+                            <dd lay-value="5" class="">laytpl</dd>
+                            <dd lay-value="6" class="">upload</dd>
+                            <dd lay-value="7" class="">laydate</dd>
+                            <dd lay-value="8" class="">laypage</dd>
+                            <dd lay-value="9" class="">flow</dd>
+                            <dd lay-value="10" class="">util</dd>
+                        </dl>
+                    </div>
+                    <i class="layui-icon"></i>
+                </div>
+
+
+                <!-- 天气 -->
+                <li class="layui-nav-item" style="height:60px;padding-bottom: 20px;line-height: 55px;">
+                    <div class="
+                    weather" pc>
+                        <div id="tp-weather-widget"></div>
+                        <script src="../js/weather.js"></script>
+                    </div>
+                </li>
+            </ul>
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        <img src="../images/xxx.jpg" class="layui-nav-img">
+                        <span class="welcome"></span>
+                    </a>
+                    <!-- <dl class="layui-nav-child">
+                        <dd><a href="">基本资料</a></dd>
+                        <dd><a href="">安全设置</a></dd>
+                    </dl> -->
+                </li>
+                <li class="layui-nav-item lockcms" pc>
+                    <a href="javascript:;"><i class="iconfont icon-lock1"></i><cite>锁屏</cite></a>
+                </li>
+                <li class="layui-nav-item loginout"><a href="javascript:;">退出</a></li>
+            </ul>
+        </div>
+
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a class="" href="javascript:;">商品管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="goodlist.html">商品列表</a></dd>
+                            <dd><a href="goodtype.html">商品分类</a></dd>
+                            <dd><a href="addgoods.html">添加商品</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:;">用户管理</a>
+                        <dl class="layui-nav-child">
+                            <dd class="layui-this"><a href="user.html">用户列表</a></dd>
+                            <dd><a href="adduser.html">用户添加</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:;">订单管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="orderlist.html">订单列表</a></dd>
+                        </dl>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="layui-body">
+            <!-- 内容主体区域 -->
+            <div style="padding: 20px;">
+                <span class="layui-breadcrumb">
+                    <a href="index.html">首页</a>
+                    <a href="javascript:;">用户管理</a>
+                    <a><cite>用户列表</cite></a>
+                </span>
+
+                <blockquote class="layui-elem-quote news_search">
+                    <div class="layui-inline">
+                        <div class="layui-input-inline">
+                            <input type="text" value="" placeholder="请输入关键字" class="layui-input search_input" id="username">
+                        </div>
+                        <a class="layui-btn search_btn">查询</a>
+                    </div>
+                </blockquote>
+
+                <table id="test" lay-filter="test"></table>
+
+                <script type="text/html" id="toolbarDemo">
+                <div class="layui-btn-container">
+                    <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
+                    <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
+                    <button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button>
+                </div>
+                </script>
+                <script type="text/html" id="barDemo">
+                    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+                    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+                  </script>
+            </div>
+        </div>
+
+        <div class="layui-footer" style="text-align:center">
+            <!-- 底部固定区域 -->
+            © 2019.2.27 Backstage Management System
+        </div>
+    </div>
+    <style>
+        html {
+            user-select: none;
+        }
+    </style>
+    <script>
+        //JavaScript代码区域
+        layui.use(['table', 'laypage', 'element', 'jquery'], function () {
+            var element = layui.element,
+                table = layui.table,
+                laypage = layui.laypage,
+                $ = layui.jquery;
+
+            //第一个实例
+            table.render({
+                elem: '#test'
+                // , width: 1280
+                , height: 520
+                , toolbar: '#toolbarDemo'
+                , url: '/user' //数据接口
+                , cols: [[ //表头
+                    { type: 'checkbox', fixed: 'left' },
+                    { field: '_id', title: 'ID', width: 250, sort: true, fixed: 'left' }
+                    , { field: 'username', title: '用户名', width: 100 }
+                    // , { field: 'password', title: '密码', width: 80 }
+                    , { field: 'email', title: '邮箱', width: 170 }
+                    , { field: 'gender', title: '性别', width: 80, sort: true }
+                    , { field: 'beizhu', title: '备注', width: 150 }
+                    , { field: 'regtime', title: '变更时间', width: 200 }
+                    , { fixed: 'right', title: '操作', toolbar: '#barDemo', width: 120 }
+                ]]
+                , page: true
+
+            });
+
+            //头工具栏事件
+            table.on('toolbar(test)', function (obj) {
+                var checkStatus = table.checkStatus(obj.config.id);
+                switch (obj.event) {
+                    case 'getCheckData':
+                        var data = checkStatus.data;
+                        layer.alert(JSON.stringify(data));
+                        break;
+                    case 'getCheckLength':
+                        var data = checkStatus.data;
+                        layer.msg('选中了：' + data.length + ' 个');
+                        break;
+                    case 'isAll':
+                        layer.msg(checkStatus.isAll ? '全选' : '未全选');
+                        break;
+                };
+            });
+
+            //监听行工具事件
+            table.on('tool(test)', function (obj) {
+                var data = obj.data;
+                //console.log(obj)
+                if (obj.event === 'del') {
+                    layer.confirm('真的删除行么', function (index) {
+                        obj.del();
+                        layer.close(index);
+                        let xhr = new XMLHttpRequest();
+                        xhr.onload = () => {
+                            if (xhr.status == 200) {
+                                let res = JSON.parse(xhr.responseText);
+                            }
+                        }
+                        xhr.open('post', '/user', true);
+                        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                        let datas = `_id=${data._id}`;
+                        xhr.send(datas);
+                        //执行加载数据的方法
+
+                    });
+                } else if (obj.event === 'edit') {
+                    var res = data._id;
+                    // console.log(res);
+                    location.href = 'adduser.html?' + res;
+                }
+            });
+
+            //查询
+            $(".search_btn").click(function () {
+                let _username = document.getElementById("username").value;
+
+                if ($(".search_input").val() != '') {
+                    var index = layer.msg('查询中，请稍候', { icon: 16, time: false, shade: 0.8 });
+                    setTimeout(function () {
+                        $.ajax({
+                            url: `/search?username=${_username}`,
+                            type: "get",
+                            success: function (data) {
+                                table.render({
+                                    elem: '#test'
+                                    // , width: 600
+                                    , height: 520
+                                    , toolbar: '#toolbarDemo'
+                                    , url: `/search?username=${_username}` //数据接口
+                                    , cols: [[ //表头
+                                        { type: 'checkbox', fixed: 'left' },
+                                        { field: '_id', title: 'ID', width: 250, sort: true, fixed: 'left' }
+                                        , { field: 'username', title: '用户名', width: 100 }
+                                        // , { field: 'password', title: '密码', width: 80 }
+                                        , { field: 'email', title: '邮箱', width: 170 }
+                                        , { field: 'gender', title: '性别', width: 80, sort: true }
+                                        , { field: 'beizhu', title: '备注', width: 150 }
+                                        , { field: 'regtime', title: '变更时间', width: 200 }
+                                        , { fixed: 'right', title: '操作', toolbar: '#barDemo', width: 120 }
+                                    ]]
+                                    , page: true
+                                    // , limit: limit
+                                });
+                            }
+                        })
+                        layer.close(index);
+                    }, 1500);
+                } else {
+                    layer.msg("请输入需要查询的用户");
+                }
+            });
+
+            //键盘回车查询
+            $(document).on('keydown', function () {
+                if (event.keyCode == 13) {
+                    $(".search_btn").click();
+                }
+            });
+        });
+
+    </script>
+    <script src="../js/token.js"></script>
+</body>
+
+</html>

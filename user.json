@@ -1,0 +1,2 @@
+{"_id":{"$oid":"5c7e65a016fea345b8e5b019"},"username":"wusiyu","password":"e10adc3949ba59abbe56e057f20f883e","email":"666@qq.com","gender":"男","regtime":{"$date":"2019-03-05T12:03:43.607Z"}}
+{"_id":{"$oid":"5c7e69e916fea345b8e5b01a"},"username":"hyz","password":"e10adc3949ba59abbe56e057f20f883e","email":"123@qq.com","gender":"男","regtime":{"$date":"2019-03-05T12:22:00.609Z"}}
