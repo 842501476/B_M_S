@@ -2,7 +2,7 @@
 	Backstage_Management_System
 
 ##人员结构:
-	成员:伍思宇 何岳洲
+	成员:wsy hyz
 
 ### 项目演示地址：
 http://47.107.93.209:1811
